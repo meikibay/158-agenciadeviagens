@@ -92,8 +92,16 @@
 				<!-- Formulário Acaba aqui! -->
 
             </div>
+            <div class="col-md-4">
+
+            	<div class="resultados">
+            		<br>
+            		<br>
+				</div>
+
+            </div>	
 			
-			<div class="col-xs-6">
+			<div class="col-md-4">
 
 				<!-- Chart Inicia aqui! -->
 
@@ -103,7 +111,7 @@
 
        			</div>
 
-       			<!-- Chart Inicia aqui! -->
+       			<!-- Chart Acaba aqui! -->
 			</div>
 
         </div>
@@ -187,5 +195,20 @@
                 window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
             };
     </script>
+
+
+    <script>
+
+		
+			orig = "http://www.franciscoribeiro.net/datas.json";
+
+			$.getJSON(orig, function( data ) {
+			$( ".resultados" ).append( '<h3>' + data['datav1'] + '</h3>');
+			});
+			
+
+
+
+	</script>
 
 </html>	
