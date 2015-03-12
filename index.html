@@ -3,9 +3,11 @@
 		<meta charset="utf-8">
 		<title>Agencia de Viagens</title>
 
-		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link rel="stylesheet" type="text/css" href="">
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="css/half-slider.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/datedropper.css">
+
 	</head>
 	<body>
 		<!-- Slider Inicia aqui! -->
@@ -51,7 +53,7 @@
         <a class="right carousel-control" href="#myCarousel" data-slide="next">
             <span class="icon-next"></span>
         </a>
-
+    </header>
         <!-- Slider Acaba aqui! -->
 
          <div class="container">
@@ -64,7 +66,7 @@
                 <!-- Formulário Inicia aqui! -->
 
                 <form id="vform" action="index.html" method="post">
-
+                <br></br>
 				<label>Nome</label>
 				<input id="nome" type="text" name="nome" value="">
 				<br></br>
@@ -78,7 +80,10 @@
 				<br></br>
 
 				<label for ="data">Data</label>
-				<input id="data" type="date" name="data" value="" required>
+				<input type="text" id="departure" />
+
+
+
 				<br></br>
 
 				<input type="submit" value="Confirmar Reserva">
@@ -90,7 +95,7 @@
 			
 			<div class="col-lg-12">
 
-				
+
 			</div>
         </div>
 
@@ -110,6 +115,19 @@
     })
     </script>
 
+    <script src="js/datedropper.js"></script>
+
+		<script>
+		$( "#departure" ).dateDropper({
+			color: "#BCEBDD", 
+			format: "d-m-Y",
+			placeholder: "Escolha a data",
+			});
+		</script>
+
+
+    <script src="js/jquery.validate.js"></script>
+
     <script> 
 	$("#vform").validate(
 	{
@@ -123,13 +141,15 @@
 		},
 
 		messages:{
-			nome:'o nome é obrigatorio'
+			nome:'O seu Nome é obrigatorio',
+			omeuemail:'O seu Email é obrigatorio',
+			telefone:'O seu Contacto é obrigatorio',
 			},
-	},
+	}
 		);
 	</script>
 
-
+		
 
 
 </html>	
