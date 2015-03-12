@@ -93,10 +93,19 @@
 
             </div>
 			
-			<div class="col-lg-12">
+			<div class="col-xs-6">
 
+				<!-- Chart Inicia aqui! -->
 
+				<div id="canvas-holder">
+
+            		<canvas id="chart-area" width="200" height="200"/>
+
+       			</div>
+
+       			<!-- Chart Inicia aqui! -->
 			</div>
+
         </div>
 
         <hr>
@@ -149,7 +158,34 @@
 		);
 	</script>
 
+	<script src="js/chart.js"></script>
 		
-
+	 <script>
+        var doughnutData = [
+                {
+                    value: 60,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Red"
+                },
+                {
+                    value: 30,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Green"
+                },
+                {
+                    value: 10,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Yellow"
+                },
+            ];
+            
+            window.onload = function(){
+                var ctx = document.getElementById("chart-area").getContext("2d");
+                window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+            };
+    </script>
 
 </html>	
