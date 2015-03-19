@@ -94,10 +94,7 @@
             </div>
             <div class="col-md-4">
 
-            	<div class="resultados">
-            		<p>
-
-                    </p>
+            	<div class="datas">
 				</div>
 
             </div>	
@@ -204,7 +201,7 @@
 			orig = "http://www.franciscoribeiro.net/datas.json";
 
 			$.getJSON(orig, function( data ) {
-			$( ".resultados" ).append( '<h3>' + data['datav1'] + '</h3>');
+			$( ".datas" ).append( '<h1>' + data + '</h1>' );
 			});
 			
 
