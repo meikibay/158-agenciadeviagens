@@ -166,8 +166,9 @@
 
 	<script src="js/chart.js"></script>
 		
-	 <script>
-        var doughnutData = [
+	
+    <script>
+          var doughnutData = [
                 {
                     value: 40,
                     color:"#F7464A",
@@ -192,6 +193,7 @@
                 var ctx = document.getElementById("chart-area").getContext("2d");
                 window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
             };
+
     </script>
 
     <script src="js/jquery.js"></script>
@@ -201,13 +203,15 @@
 
 			orig = "http://www.franciscoribeiro.net/datas.json";
 
-			//$.getJSON(orig, function( data ) {
-            //$( "body" ).append( data["datav1"] );
-			//});
+			$.getJSON(orig, function( data ) {
+            $( ".confirmardata" ).append( data["datav1"] + '<br/>' );
+            $( ".confirmardata" ).append( data["datav2"] + '<br/>');
+            $( ".confirmardata" ).append( data["datav3"] + '<br/>');
+			});
     
-    $.getJSON(orig, function(data){
-            $(".confirmardata").append(data + 'datav1');
-        });
+    //$.getJSON(orig, function(data){
+         //   $(".confirmardata").append(data + "datav1");
+        //});
 			
 
 
